@@ -23,6 +23,13 @@ function rightAnswer(index)//template for correct answers
     $(`#q${index}Feedback`).html("<img src='img/checkmark.png'>");
     score += 20;
 }
+function rightAnswer2(index)//template for correct answers 
+{
+    $(`#q${index}Feedback`).html("Correct!");
+    $(`#q${index}Feedback`).attr("class", "bg-success text-white");
+    $(`#q${index}Feedback`).html("<img src='img/checkmark.png'>");
+    score += 50;
+}
 function wrongAnswer(index)//template for wrong answers 
 {
     $(`#q${index}Feedback`).html("Incorrect!");
@@ -72,11 +79,20 @@ function gradeQuiz()
     else
     {wrongAnswer(4);}
     //Question 5
-    if(q5Response == "Mercury")
-    {rightAnswer(4);}
+    if(q5Response == "198")
+    {rightAnswer2(4);}
     else
     {wrongAnswer(4);}
-    
+    //question 6
+    if(q6Response == "3")
+    {rightAnswer2(4);}
+    else
+    {wrongAnswer(4);}
+    //question 7
+    if(q7Response == "98")
+    {rightAnswer2(4);}
+    else
+    {wrongAnswer(4);}
     
 
 	$("#totalScore").html(`Total Score: ${score}`);    //string literal displays score w/ backticks or plus symbol         
